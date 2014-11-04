@@ -20,5 +20,5 @@ Write-Host "Download $file"
 Download-File "http://ffmpeg.zeranoe.com/builds/win64/static/$($version).7z" "$($version).7z"
 Download-File "https://erlang.blob.core.windows.net/installers/7za.exe" "7za.exe"
 .\7za.exe x -y "$($version).7z"
-Move-Item "$($version)\bin\ffmpeg.exe" FFMPEGLib\ffmpeg.exe
-Remove-Item -Recurse -Force ".\$($version)"
+Move-Item "ffmpeg-*-win64-static\bin\ffmpeg.exe" FFMPEGLib\ffmpeg.exe
+Remove-Item -Recurse -Force ".\ffmpeg-*-win64-static"
